@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Air Quality Monitoring Dashboard</h1>
+        <p>Real-time Air Quality Updates</p>
+    </header>
+
+    <div id="aqi-container">
+        <h2>Current AQI Status: <span id="aqi-status">Loading...</span></h2>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Smoke Concentration (PM2.5)</h2>
+            <iframe width="300" height="200" src="https://thingspeak.com/channels/2829497/charts/1"></iframe>
+            <div class="sensor-value">Real-time Value: <span id="pm25-value">Loading...</span> μg/m³</div>
+        </div>
+        
+        <div class="card">
+            <h2>SO₂ (Sulfur Dioxide) Sensor</h2>
+            <iframe width="300" height="200" src="https://thingspeak.com/channels/2829497/charts/2"></iframe>
+            <div class="sensor-value">Real-time Value: <span id="mq135-value">Loading...</span> ppm</div>
+        </div>
+
+        <div class="card">
+            <h2>CO (Carbon Monoxide) Sensor</h2>
+            <iframe width="300" height="200" src="https://thingspeak.com/channels/2829497/charts/3"></iframe>
+            <div class="sensor-value">Real-time Value: <span id="mq7-value">Loading...</span> ppm</div>
+        </div>
+    </div>
+
+    <div id="warning-container"></div>
+
+    <div id="location-container" style="text-align: center; margin: 20px;">
+        <h2>Current Location: <span id="location-name">Fetching...</span></h2>
+        <div id="map" style="width: 80%; height: 300px; margin: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 Air Quality Monitoring. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</body>
+</html>
